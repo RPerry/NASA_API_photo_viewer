@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shopify_fe_intern_challenge%20/static/css/main.a8430e50.css",
+    "main.js": "/shopify_fe_intern_challenge%20/static/js/main.c92ba054.js",
+    "index.html": "/shopify_fe_intern_challenge%20/index.html",
+    "main.a8430e50.css.map": "/shopify_fe_intern_challenge%20/static/css/main.a8430e50.css.map",
+    "main.c92ba054.js.map": "/shopify_fe_intern_challenge%20/static/js/main.c92ba054.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8430e50.css",
+    "static/js/main.c92ba054.js"
+  ]
+}
