@@ -16,7 +16,6 @@ class ImageList extends Component {
         await axios.get('https://api.nasa.gov/planetary/apod?api_key=WfGraIlNaXvgCGLH59jlNqOOYhZ6bDeKRcFgiAJE&count=9&thumbs=true')
         .then((response) => {
 
-            console.log(response.data)
             this.setState({imageData: response.data})
 
             let imageArray = [];
@@ -35,14 +34,12 @@ class ImageList extends Component {
         .catch((error) => {
             console.log(error)
         });
-        console.log(this.state.imageData[0]);
     }
     componentDidMount() {
         this.fetchData();
     }
      
     render() {
-        console.log(this.state.allImagesArray);
         return(
             // iterating through the array of all of the imagecards and displaying them
             <div className='allImages'>
