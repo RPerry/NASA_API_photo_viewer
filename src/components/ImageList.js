@@ -11,8 +11,9 @@ class ImageList extends Component {
         allImagesArray: []
     }
 
+    // fetching NASA API data, mapping each image to an instance of the ImageCard component
     fetchData = async () => {
-        await axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=5')
+        await axios.get('https://api.nasa.gov/planetary/apod?api_key=WfGraIlNaXvgCGLH59jlNqOOYhZ6bDeKRcFgiAJE&count=9&thumbs=true')
         .then((response) => {
 
             console.log(response.data)
@@ -43,16 +44,15 @@ class ImageList extends Component {
     render() {
         console.log(this.state.allImagesArray);
         return(
+            // iterating through the array of all of the imagecards and displaying them
             <div className='allImages'>
                 {this.state.allImagesArray.map((image) => (
                     <div className="image">
                         {image}
                     </div>
                 ))}
-                {/* {this.state.allImagesArray[0]} */}
             </div>
 
-            // <ImageCard />
         );
     }
 }

@@ -6,7 +6,7 @@ import ImageCard from './components/ImageCard';
 class App extends Component{
   render() {
     return (
-      <section>
+      <section className="page">
         <header className="header">
           <h2 className="header-text">Spacestagram</h2>
           <h5>All Information and Images from the NASA API</h5>

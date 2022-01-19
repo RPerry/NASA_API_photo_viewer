@@ -1,7 +1,10 @@
 .App {
   text-align: center;
-  width: 99vw;
+}
+
+.page {
   height: 98vh;
+  margin: 0;
 }
 
 .header {
