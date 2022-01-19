@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import axios from 'axios';
 import './ImageListStyles.css';
 import ImageCard from './ImageCard';
@@ -7,36 +7,49 @@ import ImageCard from './ImageCard';
 
 class ImageList extends Component {
     state = {
-        imageData: [],
+        imageData: [{}],
+        allImagesArray: []
     }
+
     fetchData = async () => {
-        // const response = await axios.get('https://api.nasa.gov/EPIC/api/natural/images?api_key=WfGraIlNaXvgCGLH59jlNqOOYhZ6bDeKRcFgiAJE');
-        // this.setState({imageData: response.data})
-        console.log(this.state.imageData);
+        await axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=5')
+        .then((response) => {
+
+            console.log(response.data)
+            this.setState({imageData: response.data})
+
+            let imageArray = [];
+            this.state.imageData.map(image => {
+                imageArray.push(
+                    <ImageCard
+                        title={image.title}
+                        url={image.url}
+                        explanation={image.explanation}
+                        date={image.date}
+                    />
+                )
+            })
+            this.setState({allImagesArray: imageArray});
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+        console.log(this.state.imageData[0]);
     }
-    render() {
+    componentDidMount() {
         this.fetchData();
-        
-        // this.state.imageData.map(image => {
-        //     return (
-        //         <ImageCard
-        //         identifier= {image.identifier}
-        //         image= {image.image}
-        //         date= {image.date}
-        //         />
-                
-        //     )
-        // })
-            
-        
+    }
+     
+    render() {
+        console.log(this.state.allImagesArray);
         return(
-            <div>
-                <ImageCard 
-                identifier={this.state.imageData[0].identifier}
-                image={this.state.imageData[0].image}
-                date={this.state.imageData[0].date}
-                />
-                test
+            <div className='allImages'>
+                {this.state.allImagesArray.map((image) => (
+                    <div className="image">
+                        {image}
+                    </div>
+                ))}
+                {/* {this.state.allImagesArray[0]} */}
             </div>
 
             // <ImageCard />

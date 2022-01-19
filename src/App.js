@@ -12,7 +12,7 @@ class App extends Component{
           <h5>All Information and Images from the NASA API</h5>
           <h4>By Riyo Perry</h4>
         </header>
-        <ImageCard />
+        <ImageList />
       </section>
       );
   }

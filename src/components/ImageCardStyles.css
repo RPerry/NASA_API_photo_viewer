@@ -2,7 +2,7 @@
     
     display: grid; 
     grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 2fr .5fr .5fr; 
+    grid-template-rows: .5fr 2fr 1fr .5fr .5fr; 
     gap: 2% 2%; 
     grid-template-areas: 
         "."
@@ -11,11 +11,15 @@
         "."
         "."; 
     padding: 1em;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     border-radius: 3.5%;
     box-shadow: 3px 3px gray;
     /* padding-left: 50px; */
     /* min-width: ; */
-    max-width: 10%;
-    max-width: 10%;
+    /* max-width: 10%;
+    max-width: 10%; */
+}
+
+
+.shareLink {
 }
