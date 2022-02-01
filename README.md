@@ -1,4 +1,4 @@
-# Spacestagram - Shopify Front-End Developer Intern Challenge
+## NASA API Photo Viewing App
 
 This project is an image sharing page built with React that displays several pictures and some information about each image, as well as the ability to like an image, using NASA's [Astronomy Picture of the Day API](https://github.com/nasa/apod-api).
 
